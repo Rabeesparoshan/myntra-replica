@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
-import { FaSearch, FaUser, FaHeart, FaShoppingBag } from "react-icons/fa";
+
 import MyntraLogo from "../../assets/MyntraLogo.png"; // Adjust path as needed
 import Studioimg from "../../assets/Studioimg.png";
 // import Wishlist from "../Rightnav/Whishlist";
@@ -158,35 +158,36 @@ const Navbar = (props) => {
       </div>
 
       {/* Navbar Center */}
+      
       <div className="navbar-center">
-        <div className="search-bar">
-          <FaSearch className="search-icon" />
-          <input
-            type="text"
-            placeholder="Search for products, brands and more"
-            className="search-input"
-          />
-        </div>
-      </div>
+  <div className="search-bar">
+    <span className="search-icon">🔍</span>
+    <input
+      type="text"
+      placeholder="Search for products, brands and more"
+      className="search-input"
+    />
+  </div>
+</div>
 
-      {/* Navbar Right */}
-      <div className="navbar-right">
-        <div className="navbar-icons">
-          <div className="icon">
-            <FaUser />
-            <span>Profile</span>
-          </div>
-          <div className="icon">
-            <FaHeart />
-            <span onClick={() => { changeState("wishlist") }}>Wishlist</span>
-          </div>
-          <div className="icon">
-            <FaShoppingBag />
-            <span  onClick={() => { changeState("cart") }}>Bag</span>
-          </div>
-        </div>
-      </div>
-    </nav>
+{/* Navbar Right */}
+<div className="navbar-right">
+  <div className="navbar-icons">
+    <div className="icon">
+      <span>👤</span>
+      <span>Profile</span>
+    </div>
+    <div className="icon">
+      <span>❤️</span>
+      <span onClick={() => { changeState("wishlist") }}>Wishlist</span>
+    </div>
+    <div className="icon">
+      <span>🛍️</span>
+      <span onClick={() => { changeState("cart") }}>Bag</span>
+    </div>
+  </div>
+</div>
+
   );
 };
 
