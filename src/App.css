@@ -1,0 +1,12 @@
+::-webkit-scrollbar {
+  display: none;
+}
+
+.offsetter {
+  width: 100%;
+  height: 60px;
+}
+.navebarFixedFixer {
+  width: 100%;
+  height: 60px;
+}
