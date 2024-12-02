@@ -1,15 +1,11 @@
 import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
 import "./Navbar.css";
-
 import MyntraLogo from "../../assets/MyntraLogo.png"; // Adjust path as needed
-import Studioimg from "../../assets/Studioimg.png";
-// import Wishlist from "../Rightnav/Whishlist";
-// import Cart from "../Rightnav/Cart";
+import Studioimg from "../../assets/Studioimg.png"; // Adjust path as needed
 
+// Navbar component
 const Navbar = (props) => {
   let changeState = props.changeState;
-  ///const navigate = useNavigate(); // Initialize navigate function
 
   // State to track dropdown visibility for each category
   const [isMenDropdownVisible, setIsMenDropdownVisible] = useState(false);
@@ -38,10 +34,23 @@ const Navbar = (props) => {
     <nav className="navbar">
       {/* Navbar Left */}
       <div className="navbar-left">
-        <img src={MyntraLogo} alt="Myntra Logo" className="navbar-logo"  onClick={() => { changeState("content") }}/>
+        <img
+          src={MyntraLogo}
+          alt="Myntra Logo"
+          className="navbar-logo"
+          onClick={() => {
+            changeState("content");
+          }}
+        />
         <ul className="navbar-links">
           {/* MEN */}
-          <li onMouseEnter={toggleMenDropdown} onMouseLeave={toggleMenDropdown} onClick={() => { changeState("men") }}>
+          <li
+            onMouseEnter={toggleMenDropdown}
+            onMouseLeave={toggleMenDropdown}
+            onClick={() => {
+              changeState("men");
+            }}
+          >
             MEN
             {isMenDropdownVisible && (
               <div className="dropdown-menu">
@@ -60,7 +69,9 @@ const Navbar = (props) => {
           <li
             onMouseEnter={toggleWomenDropdown}
             onMouseLeave={toggleWomenDropdown}
-            onClick={() => { changeState("women") }}
+            onClick={() => {
+              changeState("women");
+            }}
           >
             WOMEN
             {isWomenDropdownVisible && (
@@ -80,7 +91,9 @@ const Navbar = (props) => {
           <li
             onMouseEnter={toggleKidsDropdown}
             onMouseLeave={toggleKidsDropdown}
-            onClick={() => { changeState("kid") }}
+            onClick={() => {
+              changeState("kid");
+            }}
           >
             KIDS
             {isKidsDropdownVisible && (
@@ -100,7 +113,9 @@ const Navbar = (props) => {
           <li
             onMouseEnter={toggleHomeLivingDropdown}
             onMouseLeave={toggleHomeLivingDropdown}
-            onClick={() => { changeState("hl") }}
+            onClick={() => {
+              changeState("hl");
+            }}
           >
             HOME & LIVING
             {isHomeLivingDropdownVisible && (
@@ -120,7 +135,9 @@ const Navbar = (props) => {
           <li
             onMouseEnter={toggleBeautyDropdown}
             onMouseLeave={toggleBeautyDropdown}
-            onClick={() => { changeState("beauty") }}
+            onClick={() => {
+              changeState("beauty");
+            }}
           >
             BEAUTY
             {isBeautyDropdownVisible && (
@@ -140,7 +157,9 @@ const Navbar = (props) => {
           <li
             onMouseEnter={toggleStudioDropdown}
             onMouseLeave={toggleStudioDropdown}
-            onClick={() => { changeState("studio") }}
+            onClick={() => {
+              changeState("studio");
+            }}
           >
             STUDIO
             {isStudioDropdownVisible && (
@@ -158,37 +177,38 @@ const Navbar = (props) => {
       </div>
 
       {/* Navbar Center */}
-      
       <div className="navbar-center">
-  <div className="search-bar">
-    <span className="search-icon">🔍</span>
-    <input
-      type="text"
-      placeholder="Search for products, brands and more"
-      className="search-input"
-    />
-  </div>
-</div>
+        <div className="search-bar">
+          <input
+            type="text"
+            placeholder="Search for products, brands and more"
+            className="search-input"
+          />
+        </div>
+      </div>
 
-{/* Navbar Right */}
-<div className="navbar-right">
-  <div className="navbar-icons">
-    <div className="icon">
-      <span>👤</span>
-      <span>Profile</span>
-    </div>
-    <div className="icon">
-      <span>❤️</span>
-      <span onClick={() => { changeState("wishlist") }}>Wishlist</span>
-    </div>
-    <div className="icon">
-      <span>🛍️</span>
-      <span onClick={() => { changeState("cart") }}>Bag</span>
-    </div>
-  </div>
-</div>
-
+      {/* Navbar Right */}
+      <div className="navbar-right">
+        <div className="navbar-icons">
+          <div className="icon">
+            <span>Profile</span>
+          </div>
+          <div className="icon">
+            <span onClick={() => { changeState("wishlist"); }}>Wishlist</span>
+          </div>
+          <div className="icon">
+            <span onClick={() => { changeState("cart"); }}>Bag</span>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 
 export default Navbar;
+
+                    
+             
+            
+          
+                 
